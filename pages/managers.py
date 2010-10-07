@@ -113,7 +113,7 @@ class PageManager(models.Manager):
         # we need to use the full URL
         if len(pages_list) > 1:
             for page in pages_list:
-                if page.get_complete_slug(lang) == complete_path:
+                if (page.get_complete_slug(lang) + "/" == complete_path) or (page.get_complete_slug(lang) == complete_path):
                     return page
         return None
 
